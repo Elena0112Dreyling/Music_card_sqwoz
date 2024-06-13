@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Card Artist</title>
+    <link rel="stylesheet" href="./css/main.css">
+
+
+
+    <!-- подключение js стилей -->
+		<link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+        integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+    />
+    <!-- подключение темы -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css"
+        integrity="sha512-OTcub78R3msOCtY3Tc6FzeDJ8N9qvQn1Ph49ou13xgA9VsH9+LRxoFU6EqLhW4+PKRfU+/HReXmSZXHEkpYoOA=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+    />
+
+    <script type="text/javascript">
+        var total_pics_num = 2; // колличество изображений
+        var interval = 6000; // задержка между изображениями
+        var time_out = 3; // задержка смены изображений
+        var i = 0;
+        var timeout;
+        var opacity = 100;
+        function fade_to_next() {
+          opacity--;
+          var k = i + 1;
+          var image_now = 'image_' + i;
+          if (i == total_pics_num) k = 1;
+          var image_next = 'image_' + k;
+          document.getElementById(image_now).style.opacity = opacity/100;
+          document.getElementById(image_now).style.filter = 'alpha(opacity='+ opacity +')';
+          document.getElementById(image_next).style.opacity = (100-opacity)/100;
+          document.getElementById(image_next).style.filter = 'alpha(opacity='+ (100-opacity) +')';
+          timeout = setTimeout("fade_to_next()",time_out);
+          if (opacity==1) {
+            opacity = 100;
+            clearTimeout(timeout);
+          }
+        }
+        setInterval (
+          function() {
+            i++;
+            if (i > total_pics_num) i=1;
+            fade_to_next();
+          }, interval
+        );
+      </script>
+</head>
+<body>
+
+
+
+ <!-- Шапка сайта-->
+    <header class="header">
+        <div class="container">
+            <div class="header_row">
+                <div class="header_logo"> <!----чтобы всё было в ряд-->
+                    <div class="logo">Музыкальная карточка артиста</div>
+                </div>
+                <div class="header_list">
+                    <ul class="header-list">
+                        <li class="header-list__item"> <a href="#!" class="header_list_link">Релизы</a></li>
+                        <li class="header-list__item"> <a href="#!" class="header_list_link">Фиты</a></li>
+                        <li class="header-list__item"> <a href="#!" class="header_list_link">Социальные сети</a></li>
+                    </ul>
+                </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+<!--фон -->
+    <header class="cover">
+        <div>
+            <div class = "cover_img"><img src='./img/sqwozbab.jpg' alt="" id="image_1"/></div>
+            <div class = "cover_img_2"><img src='./img/sqwozbabtem.jpg' alt="" id="image_2"/></div>
+          </div>
+        <div class="container">
+            <div class="cover_content">
+                <h1 class="cover_title">SQWOZ BAB</h1>
+                <div class="cover_text">
+                    <p>
+                        Настоящее имя: Марат Фирдусович Мингазов
+                    </p>
+                    <p>
+                        Жанр: комедийный рэп
+                    </p>
+                    <p>
+                        2 934 500 слушателей за месяц на Яндекс Музыке
+                    </p>
+                    <p>
+                        Альбом "OUT OF BOUNDS" - 1 900 000 прослушиваний
+                    </p>
+                </div>
+            </div>
+            </div>
+        </div>
+    </header>
+    
+
+
+    <section class="albums">
+        <div class="container">
+                <div class="section_header">
+                    <h2 class="section_header_desc">Альбомы и треки:</h2>
+                </div>
+            	<div class="albums_slider">
+                    <div class="slider">
+                        <div class="owl-carousel">
+                            <div><img src="./img/sqwozbab1.jpg" alt=""/></div>
+                            <div><img src="./img/sqwozbab2.jpg" alt=""/></div>
+                            <div><img src="./img/sqwozbab3.jpg" alt=""/></div>
+                            <div><img src="./img/sqwozbab4.jpg" alt=""/></div>
+                            <div><img src="./img/sqwozbab5.jpg" alt=""/></div>
+                            <div><img src="./img/sqwozbab10.jpg" alt=""/></div>
+                            <div><img src="./img/sqwozbab6.jpg" alt=""/></div>
+                            <div><img src="./img/sqwozbab8.jpg" alt=""/></div>
+                            <div><img src="./img/sqwozbab9.jpg" alt=""/></div>
+                        </div>
+                        <button class="slider_btn slider_btn--prev">
+                            <img src="./img/slider/arrow-left.svg" alt="" />
+                        </button>
+                        <button class="slider_btn slider_btn--next">
+                            <img src="./img/slider/arrow-right.svg" alt="" />
+                        </button>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+
+    <section class="feats">
+        <div class="container">
+            <div class="feats_header">
+             <h2 class="feats_header_desc">Участие в релизах:</h2>
+            </div>
+                <div class="feats_row">
+                <div class="feats_card">
+                    <img class="feats_card_img" src ='./img/feat/djar.jpg' alt="" />
+                    <h3 class="feats_card_header">Эльдар Джарахов</h3>
+                    <p>Альбом: 2 BOYZ NO CAP</p>
+                </div>
+                <div class="feats_card">
+                    <img class="feats_card_img" src ='./img/feat/bread.jpg' alt="" />
+                    <h3 class="feats_card_header">Группа: Хлеб</h3>
+                    <p>Трек: Бывший</p>
+                </div>
+                <div class="feats_card">
+                    <img class="feats_card_img" src ='./img/feat/aumara.jpg' alt="" />
+                    <h3 class="feats_card_header">AUM RAA</h3>
+                    <p>Трек: KARATE (OST "Майор Гром") </p>
+                </div>
+                <div class="feats_card">
+                    <img class="feats_card_img" src ='./img/feat/gone.jpg' alt="" />
+                    <h3 class="feats_card_header">GONE.Fludd, blago white</h3>
+                    <p>Трек: БРАТВА НА СВЯЗИ</p>
+                </div>
+            </div>
+
+
+            <div class="feats_row">
+                <div class="feats_card">
+                    <img class="feats_card_img" src ='./img/feat/rave.jpg' alt="" />
+                    <h3 class="feats_card_header">ДЕТИ RAVE</h3>
+                    <p>Трек: Zidane</p>
+                </div>
+                <div class="feats_card">
+                    <img class="feats_card_img_soda" src ='./img/feat/sodaluv.jpg' alt="" />
+                    <h3 class="feats_card_header">SODA LUV</h3>
+                    <p>Трек: Казантип</p>
+                </div>
+                <div class="feats_card">
+                    <img class="feats_card_img" src ='./img/feat/thefirst.jpg' alt="" />
+                    <h3 class="feats_card_header">The First Station</h3>
+                    <p>Трек: АУФ</p>
+                </div>
+                <div class="feats_card">
+                    <img class="feats_card_img" src ='./img/feat/yung.jpg' alt="" />
+                    <h3 class="feats_card_header">YUNG TRAPPA</h3>
+                    <p>Трек: AVIA</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <footer class="contact">
+        <div class="container">
+            <div class="contact_title">
+                <h2 class="title_1">Контакты</h2>
+            </div>
+            <div class="contact_content">
+                <p>Сотрудничество:</p>
+            </div>
+            <div class="contact_button">
+                <a href="#!" class="bth">Send message</a> 
+            </div>
+            <div class="contact_social">
+                <img class="contact_img" src="./img/icons/vk.svg" alt="" />
+                <img class="contact_img" src="./img/icons/tg.svg" alt="" />
+                <img class="contact_img" src="./img/icons/wt.svg" alt="" />
+                <img class="contact_img" src="./img/icons/yt.svg" alt="" />
+                <img class="contact_img" src="./img/icons/inst.svg" alt="" />
+            </div>
+            <div class="contact_footer">
+                <p>Подписывайся!</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script
+			src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+			referrerpolicy="no-referrer"
+		></script>
+		<!-- скрипт -->
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+			integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
+		<!-- подключение js файла -->
+		<script src="./js/main.js"></script>
+	</body>
+</html>
